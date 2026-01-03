@@ -3,152 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piyush Sharma | AI/ML Engineer</title>
+    <title>Piyush Sharma | AI Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #e2e8f0; }
-        .card:hover { transform: translateY(-5px); transition: all 0.3s ease; border-color: #38bdf8; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0f172a; /* Slate 900 */
+            background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+            color: #e2e8f0; 
+            min-height: 100vh;
+        }
+        /* Glassmorphism Classes */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7); /* Slate 800 with opacity */
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: #4285F4; /* Google Blue */
+            box-shadow: 0 10px 40px -10px rgba(66, 133, 244, 0.3);
+        }
+        .google-blue-text { color: #4285F4; }
+        .google-btn {
+            background: linear-gradient(135deg, #4285F4 0%, #2962ff 100%);
+            box-shadow: 0 4px 15px rgba(66, 133, 244, 0.4);
+        }
+        .timeline-line {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(255,255,255,0.1);
+        }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased selection:bg-blue-500 selection:text-white">
 
-    <nav class="flex justify-between items-center p-6 max-w-6xl mx-auto">
-        <div class="text-xl font-bold text-sky-400">PS.</div>
-        <div class="space-x-6 text-sm">
-            <a href="#about" class="hover:text-sky-400">About</a>
-            <a href="#skills" class="hover:text-sky-400">Skills</a>
-            <a href="#projects" class="hover:text-sky-400">Projects</a>
-            <a href="#contact" class="hover:text-sky-400">Contact</a>
+    <nav class="fixed w-full z-50 glass-panel border-b-0 top-0">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold tracking-tight text-white">Piyush<span class="google-blue-text">.AI</span></div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-blue-400 transition">About</a>
+                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
+                <a href="#certifications" class="hover:text-blue-400 transition">Certifications</a>
+            </div>
         </div>
     </nav>
 
-    <header class="max-w-4xl mx-auto mt-20 px-6 text-center">
-        <h1 class="text-5xl font-extrabold mb-4 text-white">Hi, I'm Piyush Sharma.</h1>
-        <h2 class="text-2xl text-sky-400 mb-6">AI/ML Engineer | Generative AI Specialist</h2>
-        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
-            I build autonomous agents, RAG pipelines, and scalable ML applications using Python, LangChain, and AWS. 
-            Merging 5 years of business experience with deep technical rigor in Generative AI.
+    <header id="about" class="pt-40 pb-20 px-6 text-center max-w-4xl mx-auto">
+        <div class="inline-block px-4 py-1.5 mb-6 rounded-full glass-panel text-xs font-semibold text-blue-300 border-blue-500/30">
+            Available for AI/ML Engineering Roles
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white tracking-tight">
+            Building Intelligent <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">Generative Systems</span>
+        </h1>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+            I bridge the gap between business needs and AI implementation. Specializing in 
+            <span class="text-slate-200">RAG Architectures</span>, <span class="text-slate-200">Agentic Workflows</span>, and <span class="text-slate-200">Full-Stack LLM Engineering</span>.
         </p>
-        <div class="mt-8 space-x-4">
-            <a href="https://github.com/sharma-piyush1" target="_blank" class="px-6 py-3 border border-sky-500 text-sky-500 rounded hover:bg-sky-500 hover:text-white transition">
-                <i class="fab fa-github mr-2"></i>GitHub
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+            <a href="https://github.com/sharma-piyush1" target="_blank" class="google-btn text-white px-8 py-3.5 rounded-full font-medium transition hover:scale-105">
+                <i class="fab fa-github mr-2"></i>View GitHub
             </a>
-            <a href="https://www.linkedin.com/in/piyush-sharma7444/" target="_blank" class="px-6 py-3 border border-slate-600 rounded hover:border-white transition">
+            <a href="https://www.linkedin.com/in/piyush-sharma7444/" target="_blank" class="glass-panel text-white px-8 py-3.5 rounded-full font-medium hover:bg-white/10 transition">
                 <i class="fab fa-linkedin mr-2"></i>LinkedIn
             </a>
         </div>
     </header>
 
-    <section id="skills" class="max-w-6xl mx-auto mt-24 px-6">
-        <h3 class="text-2xl font-bold mb-8 border-b border-slate-700 pb-2">Technical Arsenal</h3>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            <div class="bg-slate-800 p-4 rounded text-sky-300">Generative AI & LLMs</div>
-            <div class="bg-slate-800 p-4 rounded text-sky-300">LangChain & LangGraph</div>
-            <div class="bg-slate-800 p-4 rounded text-sky-300">RAG Architectures</div>
-            <div class="bg-slate-800 p-4 rounded text-sky-300">AWS Bedrock & SageMaker</div>
-            <div class="bg-slate-800 p-4 rounded text-sky-300">Python & SQL</div>
-            <div class="bg-slate-800 p-4 rounded text-sky-300">FastAPI & Streamlit</div>
-            <div class="bg-slate-800 p-4 rounded text-sky-300">Docker & Git</div>
-            <div class="bg-slate-800 p-4 rounded text-sky-300">Neural Networks (Keras/TF)</div>
+    <section class="max-w-6xl mx-auto px-6 mb-24">
+        <div class="glass-panel p-8 rounded-2xl">
+            <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 text-center">Technical Arsenal</h3>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-4 py-2 rounded-lg bg-slate-800 text-blue-300 text-sm font-medium border border-slate-700">Python</span>
+                <span class="px-4 py-2 rounded-lg bg-slate-800 text-blue-300 text-sm font-medium border border-slate-700">LangChain</span>
+                <span class="px-4 py-2 rounded-lg bg-slate-800 text-blue-300 text-sm font-medium border border-slate-700">AWS Bedrock</span>
+                <span class="px-4 py-2 rounded-lg bg-slate-800 text-blue-300 text-sm font-medium border border-slate-700">HuggingFace</span>
+                <span class="px-4 py-2 rounded-lg bg-slate-800 text-blue-300 text-sm font-medium border border-slate-700">RAG</span>
+                <span class="px-4 py-2 rounded-lg bg-slate-800 text-blue-300 text-sm font-medium border border-slate-700">FastAPI</span>
+                <span class="px-4 py-2 rounded-lg bg-slate-800 text-blue-300 text-sm font-medium border border-slate-700">Streamlit</span>
+                <span class="px-4 py-2 rounded-lg bg-slate-800 text-blue-300 text-sm font-medium border border-slate-700">Docker</span>
+                <span class="px-4 py-2 rounded-lg bg-slate-800 text-blue-300 text-sm font-medium border border-slate-700">XGBoost</span>
+            </div>
         </div>
     </section>
 
-    <section id="projects" class="max-w-6xl mx-auto mt-24 px-6">
-        <h3 class="text-2xl font-bold mb-8 border-b border-slate-700 pb-2">Featured Projects</h3>
-        <div class="grid md:grid-cols-2 gap-8">
-            
-            <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 card">
-                <h4 class="text-xl font-bold text-white mb-2">TalentFlow AI</h4>
-                <p class="text-sm text-sky-400 mb-4">Autonomous Recruitment Agent System</p>
-                <p class="text-slate-400 text-sm mb-4">
-                    Architected a multi-agent sourcing engine using CrewAI and Google Gemini. Integrated Exa Neural Search for real-time web indexing and Pydantic for structured data validation.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="text-xs bg-slate-900 px-2 py-1 rounded">CrewAI</span>
-                    <span class="text-xs bg-slate-900 px-2 py-1 rounded">LangChain</span>
-                    <span class="text-xs bg-slate-900 px-2 py-1 rounded">Docker</span>
-                </div>
-                <a href="https://github.com/sharma-piyush1/TalentFlow-AI" class="text-sky-400 hover:underline text-sm">View Code &rarr;</a>
-            </div>
-
-            <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 card">
-                <h4 class="text-xl font-bold text-white mb-2">AI Tutor (Grade 10)</h4>
-                <p class="text-sm text-sky-400 mb-4">RAG Application with Caching</p>
-                <p class="text-slate-400 text-sm mb-4">
-                    Engineered a scalable AI Tutor using FastAPI (Async) and LangChain. Optimized concurrency with Redis Caching (~200ms latency) and containerized deployment.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="text-xs bg-slate-900 px-2 py-1 rounded">FastAPI</span>
-                    <span class="text-xs bg-slate-900 px-2 py-1 rounded">Redis</span>
-                    <span class="text-xs bg-slate-900 px-2 py-1 rounded">RAG</span>
-                </div>
-                <a href="https://github.com/sharma-piyush1/Al-Tutor-Grade10-NCERT" class="text-sky-400 hover:underline text-sm">View Code &rarr;</a>
-            </div>
-
-            <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 card">
-                <h4 class="text-xl font-bold text-white mb-2">LangChain Agents & Apps</h4>
-                <p class="text-sm text-sky-400 mb-4">LLM Workflows & Tool Integration</p>
-                <p class="text-slate-400 text-sm mb-4">
-                    Built multiple LLM-powered apps including Doc QA and summarization pipelines. Integrated Groq, Ollama, and HuggingFace endpoints for versatile inference.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="text-xs bg-slate-900 px-2 py-1 rounded">LangChain</span>
-                    <span class="text-xs bg-slate-900 px-2 py-1 rounded">Ollama</span>
-                    <span class="text-xs bg-slate-900 px-2 py-1 rounded">Groq</span>
-                </div>
-                <a href="https://github.com/sharma-piyush1/Langchain-Projects" class="text-sky-400 hover:underline text-sm">View Code &rarr;</a>
-            </div>
-
-            <div class="bg-slate-800 p-6 rounded-lg border border-slate-700 card">
-                <h4 class="text-xl font-bold text-white mb-2">Fraud Detection System</h4>
-                <p class="text-sm text-sky-400 mb-4">ML Classification & API Serving</p>
-                <p class="text-slate-400 text-sm mb-4">
-                    Designed and trained XGBoost/RF models to identify fraudulent transactions. Included FastAPI-based model serving and feature engineering pipelines.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="text-xs bg-slate-900 px-2 py-1 rounded">XGBoost</span>
-                    <span class="text-xs bg-slate-900 px-2 py-1 rounded">Scikit-learn</span>
-                    <span class="text-xs bg-slate-900 px-2 py-1 rounded">FastAPI</span>
-                </div>
-                <a href="https://github.com/sharma-piyush1/Fraud-Detection-Machine-learning-Project" class="text-sky-400 hover:underline text-sm">View Code &rarr;</a>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="experience" class="max-w-6xl mx-auto mt-24 px-6 mb-20">
-        <h3 class="text-2xl font-bold mb-8 border-b border-slate-700 pb-2">Experience</h3>
+    <section id="projects" class="max-w-6xl mx-auto px-6 mb-24">
+        <h2 class="text-3xl font-bold mb-10 text-white flex items-center">
+            <span class="bg-blue-500 w-2 h-8 mr-4 rounded-full"></span> Featured Projects
+        </h2>
         
-        <div class="mb-8">
-            <div class="flex justify-between items-baseline mb-2">
-                <h4 class="text-xl font-bold text-white">AI/ML Engineer (Portfolio Development)</h4>
-                <span class="text-sm text-slate-500">2024 - Present</span>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass-card rounded-2xl p-6 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
+                    <i class="fas fa-robot text-8xl text-blue-500"></i>
+                </div>
+                <div class="relative z-10">
+                    <h3 class="text-xl font-bold text-white mb-2">TalentFlow AI</h3>
+                    <p class="text-blue-400 text-sm mb-4">Autonomous Recruitment Agents</p>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                        Architected a multi-agent sourcing engine using <strong>CrewAI</strong> and <strong>Gemini</strong>. Integrated Exa Neural Search for real-time web indexing and engineered Human-in-the-Loop workflows to mitigate hallucinations.
+                    </p>
+                    <div class="flex gap-2 mb-6 flex-wrap">
+                        <span class="text-xs bg-blue-500/10 text-blue-300 px-2 py-1 rounded border border-blue-500/20">CrewAI</span>
+                        <span class="text-xs bg-blue-500/10 text-blue-300 px-2 py-1 rounded border border-blue-500/20">Streamlit</span>
+                        <span class="text-xs bg-blue-500/10 text-blue-300 px-2 py-1 rounded border border-blue-500/20">Pydantic</span>
+                    </div>
+                    <a href="https://github.com/sharma-piyush1/TalentFlow-AI" class="inline-flex items-center text-sm font-semibold text-blue-400 hover:text-white transition">
+                        View Code <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
             </div>
-            <ul class="list-disc list-inside text-slate-400 text-sm space-y-1">
-                <li>Developing RAG systems and Agentic workflows using LangGraph and AWS Bedrock.</li>
-                <li>Applied Neo4j graph databases for complex relationship modeling in AI workflows.</li>
-                <li>Deployed models via AWS SageMaker, Streamlit Cloud, and HuggingFace Spaces.</li>
-            </ul>
-        </div>
 
-        <div class="mb-8">
-            <div class="flex justify-between items-baseline mb-2">
-                <h4 class="text-xl font-bold text-white">Talent Acquisition Manager</h4>
-                <span class="text-sm text-slate-500">Jan 2025 - Present</span>
+            <div class="glass-card rounded-2xl p-6 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
+                    <i class="fas fa-graduation-cap text-8xl text-purple-500"></i>
+                </div>
+                <div class="relative z-10">
+                    <h3 class="text-xl font-bold text-white mb-2">AI Tutor (RAG)</h3>
+                    <p class="text-purple-400 text-sm mb-4">Grade 10 Educational Assistant</p>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                        Engineered a scalable AI Tutor using <strong>FastAPI (Async)</strong> and <strong>LangChain</strong>. Optimized performance with Redis Caching (200ms latency) and containerized via Docker for cloud deployment.
+                    </p>
+                    <div class="flex gap-2 mb-6 flex-wrap">
+                        <span class="text-xs bg-purple-500/10 text-purple-300 px-2 py-1 rounded border border-purple-500/20">LangChain</span>
+                        <span class="text-xs bg-purple-500/10 text-purple-300 px-2 py-1 rounded border border-purple-500/20">Redis</span>
+                        <span class="text-xs bg-purple-500/10 text-purple-300 px-2 py-1 rounded border border-purple-500/20">RAG</span>
+                    </div>
+                    <a href="https://github.com/sharma-piyush1/Al-Tutor-Grade10-NCERT" class="inline-flex items-center text-sm font-semibold text-purple-400 hover:text-white transition">
+                        View Code <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
             </div>
-            <p class="text-slate-400 text-sm">TalenTech Digital (Remote)</p>
-            <ul class="list-disc list-inside text-slate-400 text-sm mt-2 space-y-1">
-                <li>Managing full recruitment lifecycle for US IT and State Clients.</li>
-                <li>Leveraging technical knowledge of Python, SQL, and Cloud roles to assess candidates.</li>
-            </ul>
-        </div>
 
+            <div class="glass-card rounded-2xl p-6 relative overflow-hidden group">
+                <div class="relative z-10">
+                    <h3 class="text-xl font-bold text-white mb-2">LLM Agents & Apps</h3>
+                    <p class="text-green-400 text-sm mb-4">Advanced LangChain Implementation</p>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                        Built a suite of LLM-powered applications including Doc QA, summarization pipelines, and agent workflows. Integrated Groq, Ollama, and HuggingFace for versatile inference optimization.
+                    </p>
+                    <a href="https://github.com/sharma-piyush1/Langchain-Projects" class="inline-flex items-center text-sm font-semibold text-green-400 hover:text-white transition">
+                        View Code <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+             <div class="glass-card rounded-2xl p-6 relative overflow-hidden group">
+                <div class="relative z-10">
+                    <h3 class="text-xl font-bold text-white mb-2">Fraud Detection System</h3>
+                    <p class="text-red-400 text-sm mb-4">ML Classification & Serving</p>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                        Designed XGBoost models to identify fraudulent transactions. Implemented feature engineering and exposed models via FastAPI endpoints for real-time inference.
+                    </p>
+                    <a href="https://github.com/sharma-piyush1/Fraud-Detection-Machine-learning-Project" class="inline-flex items-center text-sm font-semibold text-red-400 hover:text-white transition">
+                        View Code <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer id="contact" class="text-center py-12 border-t border-slate-800 text-slate-500 text-sm">
-        <p>Built by Piyush Sharma. &copy; 2026</p>
-        <p class="mt-2"><a href="mailto:sharmapiyush7444@gmail.com" class="hover:text-sky-400">sharmapiyush7444@gmail.com</a></p>
+    <section id="experience" class="max-w-4xl mx-auto px-6 mb-24 relative">
+        <h2 class="text-3xl font-bold mb-10 text-white flex items-center">
+            <span class="bg-blue-500 w-2 h-8 mr-4 rounded-full"></span> Professional History
+        </h2>
+        
+        <div class="pl-8 border-l border-slate-700 space-y-12">
+            
+            <div class="relative">
+                <span class="absolute -left-10 top-1 w-4 h-4 rounded-full bg-blue-500 border-4 border-slate-900"></span>
+                <div class="mb-1 text-blue-400 font-bold text-sm">2024 - Present</div>
+                <h3 class="text-xl font-bold text-white">AI/ML Engineer (Portfolio & Self-Directed)</h3>
+                <p class="text-slate-400 mt-2 text-sm leading-relaxed">
+                    Building and deploying GenAI applications. Using LangGraph for complex workflows, Neo4j for graph relationships, and deploying via AWS SageMaker.
+                </p>
+            </div>
+
+            <div class="relative">
+                <span class="absolute -left-10 top-1 w-4 h-4 rounded-full bg-slate-600 border-4 border-slate-900"></span>
+                <div class="mb-1 text-slate-500 font-bold text-sm">Jan 2025 - Present</div>
+                <h3 class="text-xl font-bold text-white">Talent Acquisition Manager</h3>
+                <p class="text-sm text-slate-500 mb-2">TalenTech Digital (Remote)</p>
+                <p class="text-slate-400 mt-2 text-sm leading-relaxed">
+                    Managing full-cycle recruitment for US IT and State clients. Leveraging technical understanding of Python/SQL roles to assess candidate fit.
+                </p>
+            </div>
+
+            <div class="relative">
+                <span class="absolute -left-10 top-1 w-4 h-4 rounded-full bg-slate-600 border-4 border-slate-900"></span>
+                <div class="mb-1 text-slate-500 font-bold text-sm">Feb 2021 - Jan 2025</div>
+                <h3 class="text-xl font-bold text-white">Sr. US IT Recruiter / Team Lead</h3>
+                <p class="text-sm text-slate-500 mb-2">SystemOnex Inc.</p>
+                <p class="text-slate-400 mt-2 text-sm leading-relaxed">
+                    Led a team delivering full-cycle technical recruitment (W2/C2C). Managed stakeholder communications and internal hiring for organizational growth.
+                </p>
+            </div>
+
+            <div class="relative">
+                <span class="absolute -left-10 top-1 w-4 h-4 rounded-full bg-slate-600 border-4 border-slate-900"></span>
+                <div class="mb-1 text-slate-500 font-bold text-sm">Dec 2019 - Sep 2020</div>
+                <h3 class="text-xl font-bold text-white">Maintenance Engineer</h3>
+                <p class="text-sm text-slate-500 mb-2">Ruchi Security Printing Press</p>
+                <p class="text-slate-400 mt-2 text-sm leading-relaxed">
+                    Performed routine equipment maintenance, installation, and safety procedures.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="certifications" class="max-w-6xl mx-auto px-6 mb-24">
+        <h2 class="text-3xl font-bold mb-10 text-white flex items-center">
+            <span class="bg-blue-500 w-2 h-8 mr-4 rounded-full"></span> Certifications
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="glass-panel p-6 rounded-xl hover:bg-slate-800 transition">
+                <div class="text-blue-400 text-2xl mb-4"><i class="fas fa-certificate"></i></div>
+                <h4 class="font-bold text-white mb-1">Complete Data Science Bootcamp</h4>
+                <p class="text-xs text-slate-500">Udemy (2025)</p>
+            </div>
+
+            <div class="glass-panel p-6 rounded-xl hover:bg-slate-800 transition">
+                <div class="text-blue-400 text-2xl mb-4"><i class="fas fa-certificate"></i></div>
+                <h4 class="font-bold text-white mb-1">Machine Learning A-Z</h4>
+                <p class="text-xs text-slate-500">Udemy (2025)</p>
+            </div>
+
+            <div class="glass-panel p-6 rounded-xl hover:bg-slate-800 transition">
+                <div class="text-blue-400 text-2xl mb-4"><i class="fas fa-certificate"></i></div>
+                <h4 class="font-bold text-white mb-1">Generative AI with LangChain</h4>
+                <p class="text-xs text-slate-500">Udemy</p>
+            </div>
+
+            <div class="glass-panel p-6 rounded-xl hover:bg-slate-800 transition">
+                <div class="text-blue-400 text-2xl mb-4"><i class="fas fa-database"></i></div>
+                <h4 class="font-bold text-white mb-1">DBMS with MySQL</h4>
+                <p class="text-xs text-slate-500">Sheryians Coding School</p>
+            </div>
+
+             <div class="glass-panel p-6 rounded-xl hover:bg-slate-800 transition">
+                <div class="text-blue-400 text-2xl mb-4"><i class="fab fa-python"></i></div>
+                <h4 class="font-bold text-white mb-1">Python Programming</h4>
+                <p class="text-xs text-slate-500">Sheryians Coding School</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="text-center py-12 border-t border-slate-800 text-slate-500 text-sm bg-slate-900/50 backdrop-blur">
+        <p class="mb-4">Designed & Engineered by Piyush Sharma &copy; 2026</p>
+        <div class="flex justify-center space-x-6 text-xl">
+            <a href="mailto:sharmapiyush7444@gmail.com" class="hover:text-blue-400 transition"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/sharma-piyush1" class="hover:text-blue-400 transition"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/piyush-sharma7444/" class="hover:text-blue-400 transition"><i class="fab fa-linkedin"></i></a>
+        </div>
     </footer>
 
 </body>
